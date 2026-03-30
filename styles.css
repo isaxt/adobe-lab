@@ -1,0 +1,195 @@
+
+/* ======================
+   DESIGN SYSTEM
+====================== */
+:root {
+  --bg-machine: #0a0a0a;
+  --bg-human: #fdf6f0;
+  --accent: #4da6ff;
+  --text-machine: #e6f0ff;
+  --text-human: #2a2a2a;
+}
+
+body {
+  margin: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+/* MODES */
+body.machine {
+  background: var(--bg-machine);
+  color: var(--text-machine);
+}
+
+body.human {
+  background: var(--bg-human);
+  color: var(--text-human);
+  font-family: 'Playfair Display', serif;
+}
+
+body.collision {
+  background: linear-gradient(120deg, var(--bg-machine), var(--bg-human));
+  color: white;
+}
+
+/* ======================
+   NAVIGATION
+====================== */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 10vw;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-sizing: border-box; /* Add this line */
+}
+
+.nav-left {
+  display: flex;
+  gap: 10px;
+}
+
+.mode-toggle {
+  border: 1px solid currentColor;
+  background: transparent;
+  padding: 6px 12px;
+  font-size: 11px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.mode-toggle.active {
+  opacity: 1;
+  background: rgba(255,255,255,0.1);
+}
+
+.mode-toggle:hover {
+  opacity: 1;
+}
+
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 10vw;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  justify-content: flex-end;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  letter-spacing: 1px;
+  position: relative;
+}
+.nav-links a.active {
+  opacity: 0.4;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+section {
+  min-height: 100vh;
+  padding: 80px 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ======================
+   HERO
+====================== */
+.hero h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  cursor: pointer;
+}
+
+.glitch:hover {
+  text-shadow: 2px 0 red, -2px 0 blue;
+}
+
+/* ======================
+   TIMELINE
+====================== */
+.timeline-item {
+  opacity: 0.3;
+  transition: all 0.4s ease;
+  margin-bottom: 40px;
+}
+
+.timeline-item.active {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* ======================
+   QUESTIONS
+====================== */
+.question {
+  border: 1px solid currentColor;
+  padding: 20px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.question.active {
+  background: rgba(255,255,255,0.1);
+}
+
+.answer {
+  display: none;
+  margin-top: 10px;
+}
+
+/* ======================
+   AUTHENTICITY DETECTOR
+====================== */
+.detector {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ======================
+   PARTICIPATION
+====================== */
+.response {
+  position: absolute;
+  max-width: 200px;
+  font-size: 12px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
