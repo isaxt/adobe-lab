@@ -42,6 +42,82 @@ body.collision {
   color: white;
 }
 
+/* ======================
+   NAVIGATION
+====================== */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  gap: 10px;
+}
+
+.mode-toggle {
+  border: 1px solid currentColor;
+  background: transparent;
+  padding: 6px 12px;
+  font-size: 11px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.mode-toggle.active {
+  opacity: 1;
+  background: rgba(255,255,255,0.1);
+}
+
+.mode-toggle:hover {
+  opacity: 1;
+}
+
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 10vw;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  justify-content: flex-end;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 12px;
+  letter-spacing: 1px;
+  position: relative;
+}
+.nav-links a.active {
+  opacity: 0.4;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
 section {
   min-height: 100vh;
   padding: 80px 10vw;
@@ -128,13 +204,30 @@ section {
 
 <body class="machine">
 
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="nav-left">
+    <button class="mode-toggle active" data-mode="machine">Machine</button>
+    <button class="mode-toggle" data-mode="human">Human</button>
+    <button class="mode-toggle" data-mode="collision">Hybrid</button>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#questions">Experiments</a></li>
+    <li><a href="#participation">Gallery</a></li>
+    <li><a href="#thesis">Thesis</a></li>
+  </ul>
+</nav>
+
 <!-- HERO -->
-<section class="hero">
+<section id="hero" class="hero">
   <h1 id="heroText" class="glitch">What will caring about art look like?</h1>
 </section>
 
 <!-- TIMELINE -->
-<section>
+<section id="timeline">
   <div class="timeline-item">Pre-AI: Craft & Labor</div>
   <div class="timeline-item">Early AI: Assistance</div>
   <div class="timeline-item">Now: Generation</div>
@@ -142,7 +235,7 @@ section {
 </section>
 
 <!-- QUESTIONS -->
-<section>
+<section id="questions">
   <div class="question">Is art still meaningful?
     <div class="answer">Human: Meaning comes from intent.<br>AI: Meaning is pattern recognition.</div>
   </div>
@@ -156,15 +249,40 @@ section {
 <section id="participation">
 </section>
 
+<!-- THESIS -->
+<section id="thesis">
+  <h2>The question is not what art will look like — but what caring about art will look like.</h2>
+</section>
+
 <div class="detector" id="detector">Authenticity: --%</div>
 
 <script>
 /* ======================
-   MODE SWITCH ON SCROLL
+   MODE SWITCH SYSTEM TOGGLE
+====================== */
+const toggles = document.querySelectorAll(".mode-toggle");
+
+let manualMode = null;
+
+toggles.forEach(btn => {
+  btn.addEventListener("click", () => {
+    toggles.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const mode = btn.dataset.mode;
+    document.body.className = mode;
+    manualMode = mode;
+  });
+});
+
+/* ======================
+   MODE SWITCH ON SCROLL (disabled if manual)
 ====================== */
 const sections = document.querySelectorAll("section");
 
 window.addEventListener("scroll", () => {
+  if (manualMode) return; // ← THIS LINE IS KEY
+
   const scrollY = window.scrollY;
   const height = window.innerHeight;
 
@@ -250,6 +368,27 @@ function addResponse(text) {
 setInterval(() => {
   addResponse("This may have been generated.");
 }, 2000);
+
+
+const links = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  document.querySelectorAll("section").forEach(section => {
+    const top = section.offsetTop;
+    if (scrollY >= top - 200) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  links.forEach(a => {
+    a.classList.remove("active");
+    if (a.getAttribute("href") === `#${current}`) {
+      a.classList.add("active");
+    }
+  });
+});
 
 </script>
 
