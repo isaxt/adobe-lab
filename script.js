@@ -2,18 +2,27 @@
    MODE SWITCH SYSTEM TOGGLE
 ====================== */
 const toggles = document.querySelectorAll(".mode-toggle");
-
+const indicator = document.querySelector(".pill-indicator");
 let manualMode = null;
+
+function moveIndicator(btn) {
+  indicator.style.left = btn.offsetLeft + "px";
+  indicator.style.width = btn.offsetWidth + "px";
+}
 
 toggles.forEach(btn => {
   btn.addEventListener("click", () => {
     toggles.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-
-    const mode = btn.dataset.mode;
-    document.body.className = mode;
-    manualMode = mode;
+    moveIndicator(btn);
+    document.body.className = btn.dataset.mode;
+    manualMode = btn.dataset.mode;
   });
+});
+
+// initialize position on load
+window.addEventListener("DOMContentLoaded", () => {
+  moveIndicator(document.querySelector(".mode-toggle.active"));
 });
 
 /* ======================
@@ -42,8 +51,8 @@ window.addEventListener("scroll", () => {
 ====================== */
 const hero = document.getElementById("heroText");
 const variants = [
-  "What will caring about art look like?",
-  "What will caring look like?",
+  "What will making art look like?",
+  "What will *making* look like?",
   "What will art look like?"
 ];
 
@@ -93,12 +102,42 @@ document.addEventListener("mousemove", () => {
 /* ======================
    PARTICIPATION RANDOM RESPONSES
 ====================== */
+
 const container = document.getElementById("participation");
 
-function addResponse(text) {
+// 1. Create a pool of responses
+const responses = {
+  human: [
+    "I wrote this.",
+    "This feels intentional.",
+    "There was a decision here."
+  ],
+  machine: [
+    "This may have been generated.",
+    "Pattern recognized.",
+    "Statistically probable output."
+  ],
+  hybrid: [
+    "Co-authored.",
+    "Prompted into existence.",
+    "Neither fully human nor machine."
+  ]
+};
+
+// 2. Utility: pick a random item
+function getRandomResponse() {
+  const categories = Object.keys(responses); // ["human", "machine", "hybrid"]
+  const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+  const pool = responses[randomCategory];
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+function addResponse() {
   const div = document.createElement("div");
   div.className = "response";
-  div.innerText = text;
+
+  // 3. Use random response instead of fixed text
+  div.innerText = getRandomResponse();
 
   div.style.left = Math.random() * 80 + "%";
   div.style.top = Math.random() * 80 + "%";
@@ -106,10 +145,13 @@ function addResponse(text) {
   container.appendChild(div);
 }
 
-setInterval(() => {
-  addResponse("This may have been generated.");
-}, 2000);
+// 4. Call without argument
+setInterval(addResponse, 2000);
 
+
+/* ======================
+   NAV ACTIVE STATE
+====================== */
 
 const links = document.querySelectorAll(".nav-links a");
 
