@@ -1,0 +1,213 @@
+  @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --pink: #e8a0bf;
+    --lavender: #c9a0dc;
+    --gold: #c9a227;
+  }
+
+  html, body {
+    background: #1a0a2e;
+    min-height: 100vh;
+    font-family: 'IM Fell English', serif;
+    overflow-x: hidden;
+  }
+
+  .scene {
+    position: relative;
+    width: 100%;
+    min-height: 1100px;
+    overflow: visible;
+  }
+
+  /* Background */
+  .bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  /* Title */
+  .title {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: rgba(255,255,255,0.75);
+    z-index: 10;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+    pointer-events: none;
+  }
+
+  /* Checker room — top left */
+  .checker {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 300px;
+    z-index: 5;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+    transition: transform 0.4s ease;
+  }
+  .checker:hover { transform: scale(1.06) rotate(-2deg); }
+
+  /* Orb — top right */
+  .orb {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 110px;
+    z-index: 5;
+    filter: drop-shadow(0 6px 18px rgba(0,0,0,0.5));
+    transition: transform 0.6s ease;
+  }
+  .orb:hover { transform: rotate(15deg) scale(1.05); }
+
+  /* Angel face sun — upper center */
+  .angel-face {
+    position: absolute;
+    top: 140px;
+    left: 45%;
+    transform: translateX(-55%);
+    width: 300px;
+    z-index: 6;
+    filter: drop-shadow(0 8px 24px rgba(200,150,255,0.4));
+    animation: float 5s ease-in-out infinite;
+  }
+
+  /* Hippo — mid right */
+  .hippo {
+    position: absolute;
+    top: 300px;
+    right: 20px;
+    width: 200px;
+    z-index: 6;
+    filter: drop-shadow(0 6px 16px rgba(0,0,0,0.5));
+    transition: transform 0.5s ease;
+  }
+  .hippo:hover { transform: translateY(-8px) scale(1.03); }
+
+  /* Split statue — center */
+  .split-statue {
+    position: absolute;
+    top: 480px;
+    left: 55%;
+    transform: translateX(-50%);
+    width: 300px;
+    z-index: 6;
+    filter: drop-shadow(0 6px 20px rgba(0,0,0,0.5));
+    transition: transform 0.4s ease;
+  }
+  .split-statue:hover { transform: translateX(-50%) scale(1.04); }
+
+  /* Stairwell door — lower left */
+  .stairwell {
+    position: absolute;
+    top: 600px;
+    left: 20px;
+    width: 170px;
+    z-index: 6;
+    filter: drop-shadow(0 6px 20px rgba(0,0,0,0.6));
+    transition: transform 0.4s ease;
+  }
+  .stairwell:hover { transform: scale(1.05) translateY(-4px); }
+
+      /* Sun stairs (spiral staircase) — lower right large */
+  .sun-stairs {
+    position: absolute;
+    bottom: 0px;
+    right: -10px;
+    width: 500px;
+    z-index: 7;
+    filter: drop-shadow(0 12px 30px rgba(0,0,0,0.6));
+    animation: breathe 7s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateX(-55%) translateY(0px); }
+    50% { transform: translateX(-55%) translateY(-14px); }
+  }
+
+  @keyframes breathe {
+    0%, 100% { filter: drop-shadow(0 12px 30px rgba(0,0,0,0.6)); }
+    50% { filter: drop-shadow(0 12px 40px rgba(180,120,255,0.4)); }
+  }
+
+  /* Parallax cursor effect */
+  .scene[data-parallax] .angel-face,
+  .scene[data-parallax] .orb,
+  .scene[data-parallax] .hippo {
+    will-change: transform;
+  }
+
+  .vignette {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(10,0,25,0.35) 100%);
+    z-index: 8;
+    pointer-events: none;
+  }
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    opacity: 0.04;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+
+  #quote-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 7;
+}
+
+/* Individual quote */
+.quote {
+  position: absolute;
+  max-width: 260px;
+  padding: 14px 18px;
+  border-radius: 999px;
+
+  color: white;
+  font-size: 15px;
+  line-height: 1.4;
+
+  background: radial-gradient(circle at 30% 30%, rgba(255,200,230,0.85), rgba(232,160,191,0.6));
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 0 25px rgba(255,180,220,0.35),
+    0 8px 20px rgba(0,0,0,0.25);
+
+  opacity: 0;
+  transform: scale(0.9) translateY(10px);
+  animation: fadeInQuote 4s ease forwards;
+}
+
+/* gentle floating feel */
+@keyframes fadeInQuote {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02) translateY(0px);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1) translateY(-6px);
+  }
+}
