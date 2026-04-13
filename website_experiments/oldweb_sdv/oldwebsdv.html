@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SV-FARM :: Welcome to My Farm!!</title>
+
+<!-- External CSS -->
+  <link rel="stylesheet" href="oldwebsdv.css">
+
+</head>
+<body>
+ 
+<!-- FLOATING POPUPS -->
+<div class="popup" id="popup-welcome">
+  <div class="popup-titlebar">
+    <div class="title-text">
+      <span class="popup-title-icon">🌾</span>
+      Valley Update Wizard
+    </div>
+    <div class="popup-controls">
+      <div class="popup-btn">_</div>
+      <div class="popup-btn">□</div>
+      <div class="popup-btn" onclick="this.closest('.popup').remove()">✕</div>
+    </div>
+  </div>
+  <div class="popup-body">
+    <div class="popup-icon">❌</div>
+    <div class="popup-text">Junimos detected too many parsnips.<br>Please update configuration.</div>
+  </div>
+  <div class="popup-footer">
+    <button class="win-btn" onclick="this.closest('.popup').remove()">OK</button>
+  </div>
+</div>
+ 
+<div class="popup" id="popup-error">
+  <div class="popup-titlebar">
+    <div class="title-text">
+      <span class="popup-title-icon">☕</span>
+      Internal Error
+    </div>
+    <div class="popup-controls">
+      <div class="popup-btn">✕</div>
+    </div>
+  </div>
+  <div class="popup-body">
+    <div class="popup-icon">⚠️</div>
+    <div class="popup-text">Your coffee boost has run for 1h 37m 23s. The game engine does not allow a system to run that long on caffeine.<br>Your computer will now rest.</div>
+  </div>
+  <div class="popup-footer">
+    <button class="win-btn" onclick="this.closest('.popup').remove()">OK</button>
+  </div>
+</div>
+ 
+<div class="popup" id="popup-update">
+  <div class="popup-titlebar">
+    <div class="title-text">
+      <span class="popup-title-icon">💿</span>
+      CD-ROM error
+    </div>
+    <div class="popup-controls">
+      <div class="popup-btn">✕</div>
+    </div>
+  </div>
+  <div class="popup-body">
+    <div class="popup-icon">❓</div>
+    <div class="popup-text">Error reading "How to make void mayonnaise." Please insert other egg.</div>
+  </div>
+  <div class="popup-footer">
+    <button class="win-btn" onclick="this.closest('.popup').remove()">OK</button>
+  </div>
+</div>
+ 
+<div class="popup" id="popup-cdrom">
+  <div class="popup-titlebar">
+    <div class="title-text">
+      <span class="popup-title-icon">🖥️</span>
+      Windows FAT
+    </div>
+    <div class="popup-controls">
+      <div class="popup-btn">?</div>
+      <div class="popup-btn">✕</div>
+    </div>
+  </div>
+  <div class="popup-body">
+    <div class="popup-icon">⚠️</div>
+    <div class="popup-text">Windows 98 has detected too much FAT already to muchthat. Please stay with FAT16.</div>
+  </div>
+  <div class="popup-footer">
+    <button class="win-btn" onclick="this.closest('.popup').remove()">OK</button>
+  </div>
+</div>
+ 
+<!-- MAIN SITE -->
+<div class="site-wrapper">
+ 
+  <!-- BANNER -->
+  <div class="banner">
+    <div class="banner-title">✦ SV-FARM ✦</div>
+    <div class="banner-sub">~*~ Pelican Town Fansite v2.3 ~*~</div>
+  </div>
+ 
+  <!-- SPRITE BAR -->
+  <div class="sprite-bar">
+    <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/chicken.png" alt="chicken" title="My chickens!!">
+    <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/scarecrow_sprite.png" alt="scarecrow" title="Scurecrow">
+    <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/misc_sprite.png" alt="sprite">
+    <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/misc_sprite_2.png" alt="sprite2">
+    <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/paper_sprite.png" alt="paper">
+    <span style="color:#ffff00; font-size:14px; font-family:'VT323',monospace; animation:marquee-pulse 1.5s infinite;">⟵ CLICK TO ADOPT ⟶</span>
+    <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/sdv_asset.png" alt="asset">
+  </div>
+ 
+  <!-- THREE COLUMNS -->
+  <div class="columns">
+ 
+    <!-- LEFT COLUMN -->
+    <div>
+      <!-- Navigation -->
+      <div class="panel" style="margin-bottom:8px;">
+        <div class="panel-title">📁 Navigate</div>
+        <div class="panel-body" style="padding:4px 0;">
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">My Farm</a></li>
+            <li><a href="#">Diary</a></li>
+            <li><a href="#">Crops</a></li>
+            <li><a href="#">Animals</a></li>
+            <li><a href="#">Guestbook</a></li>
+            <li><a href="#">Links</a></li>
+            <li><a href="#">About Me</a></li>
+          </ul>
+        </div>
+      </div>
+ 
+      <!-- Visitor Counter -->
+      <div class="panel" style="margin-bottom:8px;">
+        <div class="panel-title">👁 Visitors</div>
+        <div class="panel-body">
+          <div class="visitor-counter">
+            <div class="visitor-digits">0031337</div>
+            <div class="visitor-label">visitors since 2024</div>
+          </div>
+          <div style="text-align:center; margin-top:6px;">
+            <span class="construction">🚧 UNDER CONSTRUCTION 🚧</span>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Sprites / items -->
+      <div class="panel">
+        <div class="panel-title">🎒 Inventory</div>
+        <div class="panel-body">
+          <div class="asset-row" style="flex-wrap:wrap;">
+            <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/sdv_asset_2.png" alt="item" title="Rainbow Shell">
+            <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/sdv_asset_3.png" alt="item" title="Potions">
+          </div>
+          <div style="text-align:center; margin-top:6px; font-size:13px; color:#555;">hover for item names!</div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- CENTER COLUMN -->
+    <div>
+      <!-- Farm Screenshots -->
+      <div class="farm-display" style="margin-bottom:8px;">
+        <div class="farm-label">📷 MY FARM :: "Witchwood Farm" (Spring Year 3)</div>
+        <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/sdv_background_2.png" alt="Witchwood Farm">
+      </div>
+ 
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
+        <div class="farm-display">
+          <div class="farm-label">📷 Overview Map</div>
+          <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/sdv_background.png" alt="Farm Map">
+        </div>
+        <div class="farm-display">
+          <div class="farm-label">📷 The Gardens</div>
+          <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/sdv_background_3.png" alt="Farm 3">
+        </div>
+      </div>
+ 
+      <!-- Terminal box -->
+      <div class="panel" style="margin-bottom:8px;">
+        <div class="panel-title">
+          <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/scarecrow_sprite.png" style="height:14px; image-rendering:pixelated; margin-right:4px;" alt="">
+          SV-FARM Terminal
+        </div>
+        <div class="panel-body">
+          <div class="terminal-box">
+            <div class="terminal-text">
+              SV-FARM > <span style="color:white;">welcome.bat</span><br>
+              Loading farm data...<br>
+              Season: SPRING | Day: 14 | Year: 3<br>
+              Gold: 847,293g | Friendship: MAX<br>
+              Chickens: 8 | Cows: 3 | Ducks: 4<br>
+              > <span class="cursor-blink">_</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- About -->
+      <div class="panel">
+        <div class="panel-title">🌸 About My Farm</div>
+        <div class="panel-body">
+          <p class="about-text">
+            hi!!! welcome 2 my corner of the internet!! 🌾 this is my <span class="highlight">OFFICIAL FAN PAGE</span> for my stardew valley farm "Witchwood Farm"!!! <br><br>
+            i have been playing for <span class="highlight">847 hours</span> lol!! my farmer's name is <span class="highlight">Luna</span> and she is married to <span class="highlight">Sebastian</span>!! <span class="blink">♡</span><br><br>
+            the purple witch farm aesthetic is my EVERYTHING. if u also love purple and void chickens PLZ sign my guestbook!!
+          </p>
+          <div class="badges">
+            <div class="badge purple">Purple Farm</div>
+            <div class="badge teal">Witch Aesthetic</div>
+            <div class="badge maroon">800+ Hours</div>
+            <div class="badge">SDV 1.6</div>
+            <div class="badge teal">Void Enjoyer</div>
+            <div class="badge purple">Sebastian♡</div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- RIGHT COLUMN -->
+    <div>
+      <!-- Woven Art -->
+      <div class="panel" style="margin-bottom:8px;">
+        <div class="panel-title">🧵 Woven Dialogs</div>
+        <div class="panel-body" style="padding:4px;">
+          <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/woven_web.png" alt="Woven internet art" style="width:100%; display:block; image-rendering:pixelated; margin-bottom:4px;">
+          <div style="font-size:13px; color:#555; text-align:center;">found on the world wide web!!</div>
+        </div>
+      </div>
+ 
+      <!-- More woven -->
+      <div class="panel" style="margin-bottom:8px;">
+        <div class="panel-title">🖼 web_woven.png</div>
+        <div class="panel-body" style="padding:4px;">
+          <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/web_woven.png" alt="Web woven" style="width:100%; display:block; image-rendering:pixelated;">
+        </div>
+      </div>
+ 
+      <!-- Today's Mood -->
+      <div class="panel" style="margin-bottom:8px;">
+        <div class="panel-title">💜 Today's Mood</div>
+        <div class="panel-body">
+          <div style="text-align:center;">
+            <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/sdv_asset.png" alt="mood" style="image-rendering:pixelated; height:48px; animation:float 1.5s ease-in-out infinite;">
+          </div>
+          <div style="font-size:15px; text-align:center; margin-top:6px; color:#800080;">
+            ✨ cottagecore witch ✨<br>
+            <span style="font-size:13px; color:#555;">now playing: peaceful farm ost</span>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Links -->
+      <div class="panel">
+        <div class="panel-title">🔗 Cool Links</div>
+        <div class="panel-body">
+          <ul class="nav-links" style="font-size:14px;">
+            <li><a href="#">Stardew Wiki</a></li>
+            <li><a href="#">Nexus Mods</a></li>
+            <li><a href="#">r/StardewValley</a></li>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">YouTube Guides</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- DIARY SECTION -->
+  <div class="woven-section" style="margin-bottom:8px;">
+    <div class="panel-title">📔 Farm Diary — Digital Diary 1.0</div>
+    <div style="display:grid; grid-template-columns:180px 1fr;">
+      <div style="background:#a0a0a0; border-right:2px solid #404040; padding:4px;">
+        <ul class="diary-entry-list">
+          <li class="active" onclick="showEntry(0, this)">Spring 14, Y3</li>
+          <li onclick="showEntry(1, this)">Spring 13, Y3</li>
+          <li onclick="showEntry(2, this)">Spring 10, Y3</li>
+          <li onclick="showEntry(3, this)">Winter 28, Y2</li>
+        </ul>
+      </div>
+      <div class="diary-content" id="diary-text">
+        <div class="diary-date">Spring 14, Year 3:</div>
+        Finally unlocked the greenhouse!! I spent ALL of spring getting those bundles done. Now I can grow strawberries all year round. Also the void chickens laid some eggs today which means MORE void mayo which means MORE gold. Perfection is within reach...
+      </div>
+    </div>
+  </div>
+ 
+  <!-- FOOTER -->
+  <div class="footer">
+    <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/chicken.png" style="height:20px; image-rendering:pixelated; vertical-align:middle;" alt="chicken">
+    &nbsp; SV-FARM v2.3 :: Made with ♡ and way too many hours :: 
+    <a href="#">Email me</a> | <a href="#">Sign Guestbook</a> | <a href="#">Top</a>
+    &nbsp; <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/chicken.png" style="height:20px; image-rendering:pixelated; vertical-align:middle;" alt="chicken">
+    <br>
+    <span style="font-size:12px; color:#888;">Best viewed in Netscape Navigator 4.0 at 800×600. © 2024 SV-FARM. All rights reserved to ConcernedApe.</span>
+  </div>
+ 
+</div>
+ 
+<!-- JS -->
+<script src="oldweb.js"></script>
+
+</body>
+</html>

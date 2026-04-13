@@ -99,10 +99,6 @@ document.addEventListener("mousemove", () => {
   document.getElementById("detector").innerText = `Human Authenticity: ${value}%`;
 });
 
-/* ======================
-   PARTICIPATION RANDOM RESPONSES
-====================== */
-
 const container = document.getElementById("participation");
 
 // 1. Create a pool of responses
