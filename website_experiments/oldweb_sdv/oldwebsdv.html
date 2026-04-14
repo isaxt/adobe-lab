@@ -4,20 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SV-FARM :: Welcome to My Farm!!</title>
-
-<!-- External CSS -->
-  <link rel="stylesheet" href="oldwebsdv.css">
-
+<link rel="stylesheet" href="oldwebsdv.css">
 </head>
 <body>
- 
+
 <!-- FLOATING POPUPS -->
 <div class="popup" id="popup-welcome">
   <div class="popup-titlebar">
-    <div class="title-text">
-      <span class="popup-title-icon">🌾</span>
-      Valley Update Wizard
-    </div>
+    <div class="title-text"><span class="popup-title-icon">🌾</span> Valley Update Wizard</div>
     <div class="popup-controls">
       <div class="popup-btn">_</div>
       <div class="popup-btn">□</div>
@@ -32,13 +26,10 @@
     <button class="win-btn" onclick="this.closest('.popup').remove()">OK</button>
   </div>
 </div>
- 
+
 <div class="popup" id="popup-error">
   <div class="popup-titlebar">
-    <div class="title-text">
-      <span class="popup-title-icon">☕</span>
-      Internal Error
-    </div>
+    <div class="title-text"><span class="popup-title-icon">☕</span> Internal Error</div>
     <div class="popup-controls">
       <div class="popup-btn">✕</div>
     </div>
@@ -51,13 +42,10 @@
     <button class="win-btn" onclick="this.closest('.popup').remove()">OK</button>
   </div>
 </div>
- 
+
 <div class="popup" id="popup-update">
   <div class="popup-titlebar">
-    <div class="title-text">
-      <span class="popup-title-icon">💿</span>
-      CD-ROM error
-    </div>
+    <div class="title-text"><span class="popup-title-icon">💿</span> CD-ROM error</div>
     <div class="popup-controls">
       <div class="popup-btn">✕</div>
     </div>
@@ -70,13 +58,10 @@
     <button class="win-btn" onclick="this.closest('.popup').remove()">OK</button>
   </div>
 </div>
- 
+
 <div class="popup" id="popup-cdrom">
   <div class="popup-titlebar">
-    <div class="title-text">
-      <span class="popup-title-icon">🖥️</span>
-      Windows FAT
-    </div>
+    <div class="title-text"><span class="popup-title-icon">🖥️</span> Windows FAT</div>
     <div class="popup-controls">
       <div class="popup-btn">?</div>
       <div class="popup-btn">✕</div>
@@ -90,30 +75,33 @@
     <button class="win-btn" onclick="this.closest('.popup').remove()">OK</button>
   </div>
 </div>
- 
+
 <!-- MAIN SITE -->
 <div class="site-wrapper">
- 
+
   <!-- BANNER -->
   <div class="banner">
     <div class="banner-title">✦ SV-FARM ✦</div>
     <div class="banner-sub">~*~ Pelican Town Fansite v2.3 ~*~</div>
   </div>
- 
-  <!-- SPRITE BAR -->
+
+  <!-- SPRITE BAR — now includes new sprites -->
   <div class="sprite-bar">
-    <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/chicken.png" alt="chicken" title="My chickens!!">
-    <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/scarecrow_sprite.png" alt="scarecrow" title="Scurecrow">
-    <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/misc_sprite.png" alt="sprite">
-    <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/misc_sprite_2.png" alt="sprite2">
-    <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/paper_sprite.png" alt="paper">
-    <span style="color:#ffff00; font-size:14px; font-family:'VT323',monospace; animation:marquee-pulse 1.5s infinite;">⟵ CLICK TO ADOPT ⟶</span>
-    <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/sdv_asset.png" alt="asset">
+    <img src="sdv_oldweb_assets/chicken.png"        alt="chicken"    title="My chickens!!">
+    <img src="sdv_oldweb_assets/scarecrow_sprite.png" alt="scarecrow" title="Scarecrow">
+    <img src="sdv_oldweb_assets/misc_sprite.png"    alt="sprite">
+    <img src="sdv_oldweb_assets/misc_sprite_2.png"  alt="sprite2">
+    <img src="sdv_oldweb_assets/paper_sprite.png"   alt="paper"      title="Seed Packet">
+    <img src="sdv_oldweb_assets/cup_sprite.png"     alt="cup"        title="Morning Coffee">
+    <img src="sdv_oldweb_assets/calc_sprite.png"    alt="calculator" title="Farm Calculator">
+    <img src="sdv_oldweb_assets/sdv_web_sprite.png" alt="web sprite" title="??">
+    <span class="adopt-label">⟵ CLICK TO ADOPT ⟶</span>
+    <img src="sdv_oldweb_assets/sdv_asset.png"      alt="asset">
   </div>
- 
+
   <!-- THREE COLUMNS -->
   <div class="columns">
- 
+
     <!-- LEFT COLUMN -->
     <div>
       <!-- Navigation -->
@@ -121,18 +109,18 @@
         <div class="panel-title">📁 Navigate</div>
         <div class="panel-body" style="padding:4px 0;">
           <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">My Farm</a></li>
-            <li><a href="#">Diary</a></li>
-            <li><a href="#">Crops</a></li>
-            <li><a href="#">Animals</a></li>
-            <li><a href="#">Guestbook</a></li>
-            <li><a href="#">Links</a></li>
-            <li><a href="#">About Me</a></li>
+            <li><a href="#"><img class="nav-icon" src="sdv_oldweb_assets/folder_sprite.png" alt="">Home</a></li>
+            <li><a href="#"><img class="nav-icon" src="sdv_oldweb_assets/folder_sprite.png" alt="">My Farm</a></li>
+            <li><a href="#"><img class="nav-icon" src="sdv_oldweb_assets/paper_sprite.png"  alt="">Diary</a></li>
+            <li><a href="#"><img class="nav-icon" src="sdv_oldweb_assets/folder_sprite.png" alt="">Crops</a></li>
+            <li><a href="#"><img class="nav-icon" src="sdv_oldweb_assets/folder_sprite.png" alt="">Animals</a></li>
+            <li><a href="#"><img class="nav-icon" src="sdv_oldweb_assets/folder_sprite.png" alt="">Guestbook</a></li>
+            <li><a href="#"><img class="nav-icon" src="sdv_oldweb_assets/folder_sprite.png" alt="">Links</a></li>
+            <li><a href="#"><img class="nav-icon" src="sdv_oldweb_assets/folder_sprite.png" alt="">About Me</a></li>
           </ul>
         </div>
       </div>
- 
+
       <!-- Visitor Counter -->
       <div class="panel" style="margin-bottom:8px;">
         <div class="panel-title">👁 Visitors</div>
@@ -146,46 +134,47 @@
           </div>
         </div>
       </div>
- 
-      <!-- Sprites / items -->
+
+      <!-- Inventory — now has sdv_asset_4 too -->
       <div class="panel">
         <div class="panel-title">🎒 Inventory</div>
         <div class="panel-body">
           <div class="asset-row" style="flex-wrap:wrap;">
-            <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/sdv_asset_2.png" alt="item" title="Rainbow Shell">
-            <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/sdv_asset_3.png" alt="item" title="Potions">
+            <img src="sdv_oldweb_assets/sdv_asset_2.png" alt="item" title="Rainbow Shell">
+            <img src="sdv_oldweb_assets/sdv_asset_3.png" alt="item" title="Potions">
+            <img src="sdv_oldweb_assets/sdv_asset_4.png" alt="item" title="Mystery Item">
           </div>
           <div style="text-align:center; margin-top:6px; font-size:13px; color:#555;">hover for item names!</div>
         </div>
       </div>
     </div>
- 
+
     <!-- CENTER COLUMN -->
     <div>
       <!-- Farm Screenshots -->
       <div class="farm-display" style="margin-bottom:8px;">
         <div class="farm-label">📷 MY FARM :: "Witchwood Farm" (Spring Year 3)</div>
-        <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/sdv_background_2.png" alt="Witchwood Farm">
+        <img src="sdv_oldweb_assets/sdv_background_2.png" alt="Witchwood Farm">
       </div>
- 
+
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
         <div class="farm-display">
           <div class="farm-label">📷 Overview Map</div>
-          <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/sdv_background.png" alt="Farm Map">
+          <img src="sdv_oldweb_assets/sdv_background.png" alt="Farm Map">
         </div>
         <div class="farm-display">
           <div class="farm-label">📷 The Gardens</div>
-          <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/sdv_background_3.png" alt="Farm 3">
+          <img src="sdv_oldweb_assets/sdv_background_3.png" alt="Farm 3">
         </div>
       </div>
- 
-      <!-- Terminal box -->
+
+      <!-- Terminal — now uses sdv_terminal.png as background/header image -->
       <div class="panel" style="margin-bottom:8px;">
         <div class="panel-title">
-          <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/scarecrow_sprite.png" style="height:14px; image-rendering:pixelated; margin-right:4px;" alt="">
+          <img src="sdv_oldweb_assets/sdv_terminal.png" class="terminal-title-img" alt="terminal icon">
           SV-FARM Terminal
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="padding:0;">
           <div class="terminal-box">
             <div class="terminal-text">
               SV-FARM > <span style="color:white;">welcome.bat</span><br>
@@ -198,7 +187,7 @@
           </div>
         </div>
       </div>
- 
+
       <!-- About -->
       <div class="panel">
         <div class="panel-title">🌸 About My Farm</div>
@@ -219,32 +208,33 @@
         </div>
       </div>
     </div>
- 
+
     <!-- RIGHT COLUMN -->
     <div>
       <!-- Woven Art -->
       <div class="panel" style="margin-bottom:8px;">
         <div class="panel-title">🧵 Woven Dialogs</div>
         <div class="panel-body" style="padding:4px;">
-          <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/woven_web.png" alt="Woven internet art" style="width:100%; display:block; image-rendering:pixelated; margin-bottom:4px;">
+          <img src="sdv_oldweb_assets/woven_web.png" alt="Woven internet art" style="width:100%; display:block; image-rendering:pixelated; margin-bottom:4px;">
           <div style="font-size:13px; color:#555; text-align:center;">found on the world wide web!!</div>
         </div>
       </div>
- 
+
       <!-- More woven -->
       <div class="panel" style="margin-bottom:8px;">
-        <div class="panel-title">🖼 web_woven.png</div>
+        <div class="panel-title">🖼 web_woven</div>
         <div class="panel-body" style="padding:4px;">
-          <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/web_woven.png" alt="Web woven" style="width:100%; display:block; image-rendering:pixelated;">
+          <img src="sdv_oldweb_assets/web_woven.png" alt="Web woven" style="width:100%; display:block; image-rendering:pixelated;">
         </div>
       </div>
- 
-      <!-- Today's Mood -->
+
+      <!-- Today's Mood — now uses cup_sprite for flavour -->
       <div class="panel" style="margin-bottom:8px;">
         <div class="panel-title">💜 Today's Mood</div>
         <div class="panel-body">
-          <div style="text-align:center;">
-            <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/sdv_asset.png" alt="mood" style="image-rendering:pixelated; height:48px; animation:float 1.5s ease-in-out infinite;">
+          <div style="text-align:center; display:flex; justify-content:center; gap:10px; align-items:flex-end;">
+            <img src="sdv_oldweb_assets/sdv_asset.png"  alt="mood"   style="image-rendering:pixelated; height:48px; animation:float 1.5s ease-in-out infinite;">
+            <img src="sdv_oldweb_assets/cup_sprite.png" alt="coffee" style="image-rendering:pixelated; height:36px; animation:float 1.5s ease-in-out 0.4s infinite;">
           </div>
           <div style="font-size:15px; text-align:center; margin-top:6px; color:#800080;">
             ✨ cottagecore witch ✨<br>
@@ -252,7 +242,7 @@
           </div>
         </div>
       </div>
- 
+
       <!-- Links -->
       <div class="panel">
         <div class="panel-title">🔗 Cool Links</div>
@@ -268,10 +258,13 @@
       </div>
     </div>
   </div>
- 
+
   <!-- DIARY SECTION -->
   <div class="woven-section" style="margin-bottom:8px;">
-    <div class="panel-title">📔 Farm Diary — Digital Diary 1.0</div>
+    <div class="panel-title">
+      <img src="sdv_oldweb_assets/paper_sprite.png" class="terminal-title-img" alt="">
+      Farm Diary — Digital Diary 1.0
+    </div>
     <div style="display:grid; grid-template-columns:180px 1fr;">
       <div style="background:#a0a0a0; border-right:2px solid #404040; padding:4px;">
         <ul class="diary-entry-list">
@@ -287,21 +280,55 @@
       </div>
     </div>
   </div>
- 
+
+  <!-- DESKTOP ICON BAR — new section using calc/folder/cup sprites -->
+  <div class="desktop-bar">
+    <div class="desktop-icon">
+      <img src="sdv_oldweb_assets/calc_sprite.png" alt="Calculator">
+      <span>Farm Calc</span>
+    </div>
+    <div class="desktop-icon">
+      <img src="sdv_oldweb_assets/folder_sprite.png" alt="Folder">
+      <span>My Saves</span>
+    </div>
+    <div class="desktop-icon">
+      <img src="sdv_oldweb_assets/paper_sprite.png" alt="Notes">
+      <span>Crop Notes</span>
+    </div>
+    <div class="desktop-icon">
+      <img src="sdv_oldweb_assets/cup_sprite.png" alt="Cup">
+      <span>Coffee.exe</span>
+    </div>
+    <div class="desktop-icon">
+      <img src="sdv_oldweb_assets/sdv_terminal.png" alt="Terminal">
+      <span>SV-FARM.bat</span>
+    </div>
+    <div class="desktop-icon">
+      <img src="sdv_oldweb_assets/sdv_web_sprite.png" alt="Web">
+      <span>Ye Olde Web</span>
+    </div>
+    <div class="desktop-icon">
+      <img src="sdv_oldweb_assets/scarecrow_sprite.png" alt="Scarecrow">
+      <span>Scarecrow</span>
+    </div>
+    <div class="desktop-icon">
+      <img src="sdv_oldweb_assets/chicken.png" alt="Chicken">
+      <span>Chickens</span>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <div class="footer">
-    <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/chicken.png" style="height:20px; image-rendering:pixelated; vertical-align:middle;" alt="chicken">
-    &nbsp; SV-FARM v2.3 :: Made with ♡ and way too many hours :: 
+    <img src="sdv_oldweb_assets/chicken.png" style="height:20px; image-rendering:pixelated; vertical-align:middle;" alt="chicken">
+    &nbsp; SV-FARM v2.3 :: Made with ♡ and way too many hours ::
     <a href="#">Email me</a> | <a href="#">Sign Guestbook</a> | <a href="#">Top</a>
-    &nbsp; <img src="/website_experiments/oldweb_sdv/sdv_oldweb_assets/chicken.png" style="height:20px; image-rendering:pixelated; vertical-align:middle;" alt="chicken">
+    &nbsp; <img src="sdv_oldweb_assets/chicken.png" style="height:20px; image-rendering:pixelated; vertical-align:middle;" alt="chicken">
     <br>
     <span style="font-size:12px; color:#888;">Best viewed in Netscape Navigator 4.0 at 800×600. © 2024 SV-FARM. All rights reserved to ConcernedApe.</span>
   </div>
- 
-</div>
- 
-<!-- JS -->
-<script src="oldweb.js"></script>
 
+</div>
+
+<script src="oldweb.js"></script>
 </body>
 </html>
