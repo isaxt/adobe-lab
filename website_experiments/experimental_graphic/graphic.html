@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIROCCO — ASSET LIBRARY</title>
+
+<!-- External CSS -->
+  <link rel="stylesheet" href="graphic.css">
+
+</head>
+<body>
+ 
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="trail"></div>
+ 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">Close ✕</button>
+  <img id="lightbox-img" src="" alt="">
+  <span class="lightbox-label" id="lightbox-label"></span>
+</div>
+ 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="top-bar">
+      <span class="logo-tag">Sirocco</span>
+      <span>EST. 2024 — VOL. I</span>
+    </div>
+ 
+    <div class="hero-main-text">
+      <div class="hero-eyebrow">Graphic Asset Library</div>
+      <h1 class="hero-title">
+        <span class="line-1">FRUITS</span>
+        <span class="line-2">SIROCCO</span>
+        <span class="line-3">LIBRARY</span>
+      </h1>
+      <p class="hero-sub">A collection of experimental forms, spirals, and organic abstractions for the bold creative.</p>
+    </div>
+ 
+    <div class="hero-cta">
+      <a href="#assets" class="btn-primary">Explore Assets</a>
+      <a href="#about" class="btn-ghost">Learn More</a>
+    </div>
+  </div>
+ 
+  <div class="hero-right">
+    <div class="bg-text">S</div>
+    <img src="/website_experiments/experimental_graphic/graphic_assets/swirl.png" alt="Swirl" onclick="openLightbox(this.src, 'swirl.png')">
+  </div>
+</section>
+ 
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item">Abstract Forms <span>✦</span> Organic Shapes <span>✦</span> Spirals <span>✦</span> Blobs <span>✦</span> Posters <span>✦</span> Sirocco Asset Library <span>✦</span></div>
+    <div class="marquee-item">Abstract Forms <span>✦</span> Organic Shapes <span>✦</span> Spirals <span>✦</span> Blobs <span>✦</span> Posters <span>✦</span> Sirocco Asset Library <span>✦</span></div>
+    <div class="marquee-item">Abstract Forms <span>✦</span> Organic Shapes <span>✦</span> Spirals <span>✦</span> Blobs <span>✦</span> Posters <span>✦</span> Sirocco Asset Library <span>✦</span></div>
+  </div>
+</div>
+ 
+<!-- ASSET GRID -->
+<section class="grid-section" id="assets">
+  <div class="section-heading-wrap reveal">
+    <div>
+      <div class="section-label">// 001 — Collections</div>
+      <h2 class="section-heading">
+        All<br><span class="outline">Assets</span>
+      </h2>
+    </div>
+    <p class="section-note">Every shape, spiral, and strange blob in the library. Click to enlarge.</p>
+  </div>
+ 
+  <div class="asset-grid reveal">
+    <!-- Row 1 -->
+    <div class="asset-card" onclick="openLightbox('swirl.png','swirl.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/swirl.png" alt="Swirl">
+      <span class="asset-name">swirl</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('fan.png','fan.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/fan.png" alt="Fan">
+      <span class="asset-name">fan</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('accordian.png','accordian.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/accordian.png" alt="Accordion">
+      <span class="asset-name">accordian</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('spirl_1.png','spirl_1.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/spirl_1.png" alt="Spiral 1">
+      <span class="asset-name">spirl_1</span>
+    </div>
+    <!-- Row 2 -->
+    <div class="asset-card" onclick="openLightbox('abstract.png','abstract.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/abstract.png" alt="Abstract">
+      <span class="asset-name">abstract</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('abstract_2.png','abstract_2.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/abstract_2.png" alt="Abstract 2">
+      <span class="asset-name">abstract_2</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('abstract_3.png','abstract_3.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/abstract_3.png" alt="Abstract 3">
+      <span class="asset-name">abstract_3</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('swirl_color.png','swirl_color.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/swirl_color.png" alt="Swirl Color">
+      <span class="asset-name">swirl_color</span>
+    </div>
+    <!-- Row 3 -->
+    <div class="asset-card" onclick="openLightbox('starish.png','starish.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/starish.png" alt="Starish">
+      <span class="asset-name">starish</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('blob.png','blob.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/blob.png" alt="Blob">
+      <span class="asset-name">blob</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('rainbow_grid.png','rainbow_grid.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/rainbow_grid.png" alt="Rainbow Grid">
+      <span class="asset-name">rainbow_grid</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('blob_2.png','blob_2.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/blob_2.png" alt="Blob 2">
+      <span class="asset-name">blob_2</span>
+    </div>
+    <!-- Row 4 -->
+    <div class="asset-card" onclick="openLightbox('asset_sheet.png','asset_sheet.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/asset_sheet.png" alt="Asset Sheet">
+      <span class="asset-name">asset_sheet</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('spirl_2.png','spirl_2.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/spirl_2.png" alt="Spiral 2">
+      <span class="asset-name">spirl_2</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('duo_swirl.png','duo_swirl.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/duo_swirl.png" alt="Duo Swirl">
+      <span class="asset-name">duo_swirl</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('spirl_3.png','spirl_3.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/spirl_3.png" alt="Spiral 3">
+      <span class="asset-name">spirl_3</span>
+    </div>
+    <!-- Row 5 -->
+    <div class="asset-card" onclick="openLightbox('swirl_color_2.png','swirl_color_2.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/swirl_color_2.png" alt="Swirl Color 2">
+      <span class="asset-name">swirl_color_2</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('orbs.png','orbs.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/orbs.png" alt="Orbs">
+      <span class="asset-name">orbs</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('abstract_4.png','abstract_4.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/abstract_4.png" alt="Abstract 4">
+      <span class="asset-name">abstract_4</span>
+    </div>
+    <div class="asset-card" onclick="openLightbox('spirl_1.png','spirl_1.png')">
+      <div class="asset-tag">PNG</div>
+      <img src="/website_experiments/experimental_graphic/graphic_assets/spirl_1.png" alt="Spiral variant" style="transform:scaleX(-1)">
+      <span class="asset-name">spirl_mirror</span>
+    </div>
+  </div>
+</section>
+ 
+<!-- CHAOS SECTION -->
+<section class="chaos-section" id="about">
+  <div class="chaos-left">
+    <img class="chaos-img" src="/website_experiments/experimental_graphic/graphic_assets/starish.png" alt="">
+    <div class="chaos-big-text">
+      <span class="italic-serif">the art of</span>
+      ORGANIC
+      <span class="ghost">FORMS</span>
+    </div>
+    <div class="chaos-bottom">
+      <p>Every asset in this library is built around the principle of controlled chaos — shapes that breathe, spiral, and mutate with intention.</p>
+      <a href="#assets" class="btn-primary">Browse Library</a>
+    </div>
+  </div>
+  <div class="chaos-right">
+    <div class="chaos-img-cell"><img src="/website_experiments/experimental_graphic/graphic_assets/blob.png" alt="Blob"></div>
+    <div class="chaos-img-cell"><img src="/website_experiments/experimental_graphic/graphic_assets/abstract_3.png" alt="Abstract 3"></div>
+    <div class="chaos-img-cell"><img src="/website_experiments/experimental_graphic/graphic_assets/swirl_color.png" alt="Swirl Color"></div>
+    <div class="chaos-img-cell"><img src="/website_experiments/experimental_graphic/graphic_assets/orbs.png" alt="Orbs"></div>
+  </div>
+</section>
+ 
+<!-- MEGA TEXT -->
+<section class="text-section reveal">
+  <img class="floating-img" src="/website_experiments/experimental_graphic/graphic_assets/spirl_2.png" alt="">
+  <div class="mega-text">
+    <div class="row"><span class="filled">STRANGE</span></div>
+    <div class="row"><span class="outline-txt">BEAUTIFUL</span></div>
+    <div class="row"><span class="coral-block">WEIRD</span> <span class="serif-italic">& alive</span></div>
+    <div class="row"><span class="violet-block">SIROCCO</span></div>
+    <div class="row"><span class="outline-txt">FORMS</span></div>
+  </div>
+</section>
+ 
+<!-- POSTER SECTION -->
+<section class="poster-section">
+  <div class="poster-header reveal">
+    <div class="poster-title">
+      Editorial<br><span class="dim">Posters</span>
+    </div>
+    <div style="max-width:260px; font-family:'Instrument Serif',serif; font-style:italic; font-size:16px; color:#666; line-height:1.7;">
+      Four poster compositions from the Sirocco design system.
+    </div>
+  </div>
+  <div class="poster-grid reveal">
+    <div class="poster-card" onclick="openLightbox('poster_1.png','poster_1.png')">
+      <img src="/website_experiments/experimental_graphic/graphic_assets/poster_1.png" alt="Poster 1">
+      <span class="p-label">poster_1</span>
+    </div>
+    <div class="poster-card" onclick="openLightbox('poster_2.png','poster_2.png')">
+      <img src="/website_experiments/experimental_graphic/graphic_assets/poster_2.png" alt="Poster 2">
+      <span class="p-label">poster_2</span>
+    </div>
+    <div class="poster-card" onclick="openLightbox('poster_3.png','poster_3.png')">
+      <img src="/website_experiments/experimental_graphic/graphic_assets/poster_3.png" alt="Poster 3">
+      <span class="p-label">poster_3</span>
+    </div>
+    <div class="poster-card" onclick="openLightbox('poster_4.png','poster_4.png')">
+      <img src="/website_experiments/experimental_graphic/graphic_assets/poster_4.png" alt="Poster 4">
+      <span class="p-label">poster_4</span>
+    </div>
+  </div>
+</section>
+ 
+<!-- GLITCH SECTION -->
+<section class="glitch-section">
+  <img class="glitch-bg-img" src="/website_experiments/experimental_graphic/graphic_assets/spirl_1.png" alt="">
+  <div class="reveal">
+    <div class="section-label">// 003 — Spirals & Swirls</div>
+    <h2 class="glitch-title" data-text="VORTEX">VORTEX</h2>
+    <span class="glitch-sub">Every spiral tells a story of motion and depth.</span>
+  </div>
+  <div class="glitch-grid reveal">
+    <div class="glitch-img-item"><img src="/website_experiments/experimental_graphic/graphic_assets/swirl.png" alt="Swirl"></div>
+    <div class="glitch-img-item"><img src="/website_experiments/experimental_graphic/graphic_assets/spirl_1.png" alt="Spirl 1"></div>
+    <div class="glitch-img-item"><img src="/website_experiments/experimental_graphic/graphic_assets/spirl_2.png" alt="Spirl 2"></div>
+    <div class="glitch-img-item"><img src="/website_experiments/experimental_graphic/graphic_assets/spirl_3.png" alt="Spirl 3"></div>
+    <div class="glitch-img-item"><img src="/website_experiments/experimental_graphic/graphic_assets/duo_swirl.png" alt="Duo Swirl"></div>
+    <div class="glitch-img-item"><img src="/website_experiments/experimental_graphic/graphic_assets/swirl_color.png" alt="Swirl Color"></div>
+    <div class="glitch-img-item"><img src="/website_experiments/experimental_graphic/graphic_assets/swirl_color_2.png" alt="Swirl Color 2"></div>
+    <div class="glitch-img-item"><img src="/website_experiments/experimental_graphic/graphic_assets/accordian.png" alt="Accordian"></div>
+  </div>
+</section>
+ 
+<!-- ORGANIC SECTION -->
+<section class="organic-section" id="organic">
+  <div class="organic-text reveal">
+    <div class="organic-eyebrow">// 004 — Organic</div>
+    <h2 class="organic-heading">
+      BLOB<br>& <em>FORM</em>
+    </h2>
+    <p class="organic-body">These shapes breathe. Blob, starish, orbs — organic forms that resist the grid and embrace the strange geometry of living things.</p>
+    <a href="#assets" class="btn-primary">View All Blobs</a>
+  </div>
+  <div class="organic-images reveal reveal-delay-2">
+    <div class="org-img"><img src="/website_experiments/experimental_graphic/graphic_assets/blob.png" alt="Blob"></div>
+    <div class="org-img"><img src="/website_experiments/experimental_graphic/graphic_assets/blob_2.png" alt="Blob 2"></div>
+    <div class="org-img"><img src="/website_experiments/experimental_graphic/graphic_assets/starish.png" alt="Starish"></div>
+    <div class="org-img"><img src="/website_experiments/experimental_graphic/graphic_assets/orbs.png" alt="Orbs"></div>
+    <div class="org-img"><img src="/website_experiments/experimental_graphic/graphic_assets/abstract_2.png" alt="Abstract 2"></div>
+    <div class="org-img"><img src="/website_experiments/experimental_graphic/graphic_assets/abstract_4.png" alt="Abstract 4"></div>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">
+      SIROCCO
+      <small>Fruits Asset Library — Vol. I</small>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Assets</h4>
+        <a href="#assets">All Assets</a>
+        <a href="#assets">Spirals</a>
+        <a href="#organic">Blobs</a>
+        <a href="#assets">Abstracts</a>
+      </div>
+      <div class="footer-col">
+        <h4>Posters</h4>
+        <a href="#assets">Poster Series</a>
+        <a href="#assets">Editorial</a>
+        <a href="#assets">System Design</a>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <a href="#about">About</a>
+        <a href="#about">Process</a>
+        <a href="#about">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2024 Sirocco Studio — All forms reserved</span>
+    <span class="footer-mark">Fruits · Vol. I</span>
+  </div>
+</footer>
+ 
+
+<script src="graphic.js"></script>
+
+</body>
+</html>
