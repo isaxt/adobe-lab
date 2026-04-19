@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>☩ THE SHRINE ☩ enter if you are worthy ☩</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=UnifrakturMaguntia&family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- External CSS -->
+  <link rel="stylesheet" href="hologram.css">
+
+
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="crt-header">
+  <div class="blink-bar">⚠ YOU HAVE ENTERED THE SHRINE ⚠ PROCEED WITH DEVOTION ⚠</div>
+  <div class="marquee-wrap">
+    <span class="marquee-inner">
+      ✦ WELCOME PILGRIM ✦ THE ORDER WATCHES ✦ DO NOT REFRESH THE PAGE ✦ LEAVE AN OFFERING ✦ BEST VIEWED IN 1024×768 ✦ JAVASCRIPT REQUIRED FOR COMMUNION ✦ THE RELICS ARE ETERNAL ✦ THE DATA IS SACRED ✦ HOLOGRAMS DO NOT LIE ✦ SIGN THE GUESTBOOK ✦ YOUR IP HAS BEEN LOGGED ✦ WE KNOW YOUR SCREEN RESOLUTION ✦ THE ORDER THANKS YOU FOR YOUR VISIT ✦
+    </span>
+  </div>
+  <div class="header-main">
+    <div class="header-sigil">☩</div>
+    <div class="header-text">
+      <h1 class="site-title">THE DIGITAL SHRINE</h1>
+      <p class="site-sub">:: reliquary of the luminous order :: est. anno domini mmxxvi ::</p>
+    </div>
+    <div class="visit-counter">
+      <span class="counter-label">YOU ARE VISITOR</span>
+      <div class="counter-digits" id="counter">000000</div>
+      <span class="counter-label" style="margin-top:2px;">☩ the order counts ☩</span>
+    </div>
+  </div>
+  <div class="notice-bar">
+    <span>▌</span> WARNING: SOME RELICS MAY CAUSE SPIRITUAL DISORIENTATION &nbsp;·&nbsp; THE ORDER IS NOT RESPONSIBLE FOR CONVERSION <span>▌</span>
+  </div>
+</header>
+
+<!-- ══ NAV ══ -->
+<nav class="nav-panel">
+  <button class="nav-btn active" data-filter="all">[ ALL RELICS ]</button>
+  <button class="nav-btn" data-filter="altar">[ ALTARS ]</button>
+  <button class="nav-btn" data-filter="shrine">[ SHRINES ]</button>
+  <button class="nav-btn" data-filter="church">[ SANCTUARIES ]</button>
+  <button class="nav-btn" data-filter="hologram">[ HOLOGRAMS ]</button>
+  <button class="nav-btn" data-filter="object">[ OBJECTS ]</button>
+</nav>
+
+<div class="stat-bar">
+  <span>RELICS: <span class="stat" id="relic-count">--</span></span>
+  <span>STATUS: <span class="stat" id="sys-status">ONLINE</span></span>
+  <span>CORRUPTION: <span class="stat" id="corruption-level">0%</span></span>
+  <span>SESSION: <span class="stat" id="session-time">00:00:00</span></span>
+  <span>SIGNAL: <span class="stat" id="signal-str">████████ 100%</span></span>
+</div>
+
+<!-- ══ GRID ══ -->
+<main class="reliquary" id="reliquary"></main>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="footer-block">
+    THIS SHRINE WAS BUILT WITH DEVOTION<br>
+    © MMXXVI THE LUMINOUS ORDER<br>
+    <a href="#">[ SIGN GUESTBOOK ]</a> &nbsp; <a href="#">[ VIEW GUESTBOOK ]</a>
+  </div>
+  <div class="footer-webring">
+    &laquo; <a href="#">PREV</a> &nbsp;
+    <span class="blink">[ HOLY WEB RING ]</span>
+    &nbsp; <a href="#">NEXT</a> &raquo;<br>
+    <span style="font-size:0.7rem;color:#2a3a2a;">you are node 666 of 666</span>
+  </div>
+  <div class="footer-block" style="text-align:right;">
+    BEST VIEWED IN DARKNESS<br>
+    TURN OFF YOUR LIGHTS<br>
+    <span class="do-not-close">DO NOT CLOSE THIS TAB</span>
+  </div>
+</footer>
+
+<!-- ══ LIGHTBOX ══ -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-window">
+    <div class="lb-titlebar">
+      <span class="lb-titlebar-text" id="lb-title-bar">relic_viewer.exe</span>
+      <div class="lb-controls">
+        <div class="lb-btn">_</div>
+        <div class="lb-btn">□</div>
+        <div class="lb-btn" id="lb-close">✕</div>
+      </div>
+    </div>
+    <div class="lb-body">
+      <div class="lb-img-wrap">
+        <img class="lb-img" id="lb-img" src="" alt="">
+      </div>
+      <div class="lb-footer">
+        <div class="lb-name" id="lb-name"></div>
+        <div class="lb-data" id="lb-data"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="hologram.js"></script>
+
+<!-- SVG color channel filters for RGB split -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;">
+  <defs>
+    <filter id="red-channel">
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/>
+    </filter>
+    <filter id="blue-channel">
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+    </filter>
+  </defs>
+</svg>
+</body>
+</html>
