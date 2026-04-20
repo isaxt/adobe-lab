@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRUTALISM_ELECTRONICS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;700;900&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- External CSS -->
+  <link rel="stylesheet" href="brutalism.css">
+
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-dot"></div>
+<canvas id="wire-bg"></canvas>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <span class="cm cm-tl"></span>
+  <span class="cm cm-tr"></span>
+  <span class="cm cm-bl"></span>
+  <span class="cm cm-br"></span>
+
+  <div class="topbar">
+    <div class="topbar-id">BRUTALISM_ELECTRONICS // NODE_04</div>
+    <div class="status-cluster">
+      <span class="status-live"><span class="pulse"></span>SYS_ACTIVE</span>
+      <span>VCC: 9.0V</span>
+      <span>GND ⏚</span>
+      <span>CH_04 // 440Hz</span>
+    </div>
+  </div>
+
+  <div class="hero-body">
+    <div class="eyebrow">HANDMADE ELECTRONICS / WEB BRUTALISM / OPEN SYSTEMS</div>
+    <h1 class="hero-title">
+      <span class="t1">BRUTAL</span>
+      <span class="t2">ISM_EL</span>
+      <span class="t3">ECTRONICS</span>
+    </h1>
+    <p class="hero-sub">
+      Raw materials. Exposed traces. No apology.<br>
+      <strong>Handmade circuit systems</strong> built at the intersection of <strong>brutalist architecture</strong> and <strong>physical computing</strong>. Every solder joint is a decision. Every wire is a statement.
+    </p>
+    <div class="tags">
+      <span class="tag on">THROUGH-HOLE</span>
+      <span class="tag on">POINT-TO-POINT</span>
+      <span class="tag">PCB_RAW</span>
+      <span class="tag on">EXPOSED</span>
+      <span class="tag">NO_ENCLOSURES</span>
+      <span class="tag on">HANDWIRED</span>
+    </div>
+  </div>
+
+  <div class="resistor-strip" id="hero-strip"></div>
+</header>
+
+<!-- ═══ SIGNAL TAPE ═══ -->
+<div class="signal-tape">
+  <span class="tape-label">⬤ SIGNAL</span>
+  <div class="tape-overflow"><div class="tape-inner" id="tape-inner"></div></div>
+</div>
+
+<!-- ═══ MANIFESTO ═══ -->
+<section class="manifesto">
+  <div class="mani-left">
+    <div class="sec-eyebrow">MANIFESTO</div>
+    <h2 class="mani-head">THE RAW <em>CIRCUIT</em><br>IS THE<br>INTERFACE</h2>
+    <p class="mani-body">
+      We reject the smooth surfaces of consumer electronics. <strong>Brutalism demands honesty</strong> — let the structure be the aesthetic. PCB traces are not to be hidden. Wires are not shameful. The resistor is a beautiful object.<br><br>
+      Every component is <strong>through-hole, hand-placed, hand-soldered</strong>. We use perfboard when others use fabrication. We use wire when others use traces. We use <strong>physicality</strong> when the industry chose miniaturization.
+    </p>
+    <div class="tags" style="margin-top:2rem">
+      <span class="tag on">ANALOG</span><span class="tag on">DEAD_BUG</span>
+      <span class="tag">SMD_REJECTED</span><span class="tag on">EXPOSED</span>
+    </div>
+  </div>
+  <div class="mani-right">
+    <div class="p-card"><div class="p-corner"></div><div class="p-num">01</div>
+      <div class="p-title">PHASE_1 // SCHEMA</div>
+      <div class="p-desc">Hand-drawn schematic on gridded paper before any CAD. Intent must precede the tool.</div>
+    </div>
+    <div class="p-card"><div class="p-corner"></div><div class="p-num">02</div>
+      <div class="p-title">SYSTEM_CORE // MAPPING</div>
+      <div class="p-desc">Component arrangement dictated by signal flow. Shortest path wins. Routing is secondary to function.</div>
+    </div>
+    <div class="p-card"><div class="p-corner"></div><div class="p-num">03</div>
+      <div class="p-title">CHAOS_BAY // ASSEMBLY</div>
+      <div class="p-desc">Controlled disorder. Parts bins, solder fumes, oscilloscope probes. Process is visible in the final object.</div>
+    </div>
+    <div class="p-card"><div class="p-corner"></div><div class="p-num">04</div>
+      <div class="p-title">NETWORK_CONGESTION // TEST</div>
+      <div class="p-desc">Signal integrity measured, not assumed. Every node probed. The board speaks — you just need to listen.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gallery">
+  <div class="gallery-hdr">
+    <div>
+      <div class="sec-eyebrow">SYSTEM ARCHIVE</div>
+      <h2 class="gallery-title">BRUTALISM<br><span>ASSETS</span></h2>
+    </div>
+    <div class="gallery-meta">16 ASSETS // REV.04<br>B&amp;W + RED<br>BRUTALISM_ELECTRONICS</div>
+  </div>
+  <div class="gallery-grid" id="gallery-grid"></div>
+</section>
+
+<!-- ═══ OSCILLOSCOPE ═══ -->
+<section class="osc-section">
+  <div class="osc-info">
+    <div class="sec-eyebrow">SIGNAL_ANALYSIS</div>
+    <h2 class="osc-title">FLOW<br><span>ANALY</span>SIS</h2>
+    <div class="spec-row"><span>FREQUENCY</span><span class="spec-val" id="freq-v">440 Hz</span></div>
+    <div class="spec-row"><span>AMPLITUDE</span><span class="spec-val">3.3 V</span></div>
+    <div class="spec-row"><span>WAVEFORM</span><span class="spec-val" id="wave-v">SQUARE</span></div>
+    <div class="spec-row"><span>IMPEDANCE</span><span class="spec-val">10 kΩ</span></div>
+    <div class="spec-row"><span>SAMPLE RATE</span><span class="spec-val">44.1 kHz</span></div>
+    <div class="spec-row" style="border-bottom:none"><span>PHASE</span><span class="spec-val">0°</span></div>
+    <div class="wave-btns">
+      <button class="wave-btn on" onclick="setWave('SQUARE',this)">SQR</button>
+      <button class="wave-btn" onclick="setWave('SINE',this)">SIN</button>
+      <button class="wave-btn" onclick="setWave('SAW',this)">SAW</button>
+      <button class="wave-btn" onclick="setWave('TRIANGLE',this)">TRI</button>
+      <button class="wave-btn" onclick="setWave('NOISE',this)">NSE</button>
+    </div>
+  </div>
+  <div class="osc-screen">
+    <div class="osc-lbl">CH1 // SIGNAL_MONITOR // 1ms/div // 1V/div</div>
+    <canvas id="osc-canvas"></canvas>
+    <div class="osc-read">TRIG:<span>AUTO</span> COUP:<span>DC</span> T:<span id="osc-t">0.0ms</span> V:<span id="osc-lv">1.65V</span></div>
+  </div>
+</section>
+
+<!-- ═══ RESISTOR SLIDERS ═══ -->
+<section class="sliders-section">
+  <div class="sliders-left">
+    <div class="sec-eyebrow">COMPONENT_CONTROL</div>
+    <h2>PHYSICAL<br><em>RESISTOR</em><br>INTERFACE</h2>
+    <p style="margin-top:1.5rem">Drag the sliders — each is a physical resistor control. Color bands update in real-time using IEC 60062 standard color coding.</p>
+    <div id="big-res"></div>
+  </div>
+  <div class="sliders-right" id="sliders-right"></div>
+</section>
+
+<!-- ═══ NETWORK ═══ -->
+<section class="network">
+  <div class="net-canvas-wrap"><canvas id="net-canvas"></canvas></div>
+  <div class="net-info">
+    <div class="sec-eyebrow">NETWORK_CONGESTION</div>
+    <div class="n-stat"><div class="n-num">2<em>4</em></div><div class="n-lbl">ACTIVE NODES</div></div>
+    <div class="n-stat"><div class="n-num"><em>8</em>8</div><div class="n-lbl">WIRE CONNECTIONS</div></div>
+    <div class="n-stat"><div class="n-num">4<em>4</em>0</div><div class="n-lbl">Hz BASE FREQUENCY</div></div>
+    <div class="n-stat"><div class="n-num"><em>∞</em></div><div class="n-lbl">SIGNAL PROPAGATION</div></div>
+    <p style="font-size:0.63rem;color:#444;line-height:1.9;margin-top:1rem;border-top:1px solid var(--grey-line);padding-top:1rem;">
+      Each node is a physical junction. Signals travel as voltage differentials. The network is the circuit. The circuit is the network.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div>
+    <div class="foot-brand">BRUTAL<span>ELECTRONICS</span></div>
+    <p class="foot-desc">Handmade circuit systems at the intersection of brutalist architecture and physical computing. Every solder joint is a decision.</p>
+    <div class="resistor-strip" id="foot-strip" style="padding:1.5rem 0 0;background:transparent;border:none;margin-top:2rem;"></div>
+  </div>
+  <div>
+    <div class="foot-col-title">SYSTEM_MAP</div>
+    <ul class="foot-links">
+      <li>SCHEMA</li><li>PHASE_1</li><li>SYSTEM_CORE</li>
+      <li>CHAOS_BAY</li><li>NETWORK</li><li>COMPONENTS</li>
+    </ul>
+  </div>
+  <div>
+    <div class="foot-col-title">OUTPUT</div>
+    <ul class="foot-links">
+      <li>DOCUMENTATION</li><li>SCHEMATICS</li>
+      <li>BILL OF MATERIALS</li><li>GERBER FILES</li><li>SOURCE CODE</li>
+    </ul>
+  </div>
+</footer>
+<div class="foot-bottom">
+  <span>BRUTALISM_ELECTRONICS // NODE_04 // REV.2026</span>
+  <span>HANDMADE // OPEN SOURCE // NO ENCLOSURES</span>
+  <span>GND ⏚ // VCC 9V</span>
+</div>
+
+<script src="brutalism.js"></script>
+
+</body>
+</html>
