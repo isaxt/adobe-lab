@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Woven — Textile & Visualization</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital@0;1&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+
+<!-- External CSS -->
+  <link rel="stylesheet" href="textile.css">
+
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">Data Woven</a>
+    <ul class="nav-links">
+      <li><a href="#gallery">Collection</a></li>
+      <li><a href="#story">Method</a></li>
+      <li><a href="#technique">Technique</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">textile × data × perception</div>
+      <h1 class="hero-title">
+        Where<br/>
+        <em class="sketch-underline">threads</em><br/>
+        become<br/>
+        data
+      </h1>
+      <p class="hero-subtitle">
+        An exploration of tactile information — the intersection of woven structure and humanistic data visualization, in the tradition of <em>Giorgia Lupi</em>'s belief that data has a human face.
+      </p>
+      <div class="hero-annotation">
+        ↳ Each thread is a measurement.<br/>
+        Each knot, a data point.<br/>
+        Warp and weft as x and y.<br/>
+        Tension as standard deviation.
+      </div>
+    </div>
+    <div class="hero-viz">
+      <svg id="hero-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+  </section>
+
+  <!-- THREAD DIVIDER -->
+  <div class="thread-divider">
+    <svg viewBox="0 0 1200 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="24">
+      <path d="M0,12 Q50,2 100,12 Q150,22 200,12 Q250,2 300,12 Q350,22 400,12 Q450,2 500,12 Q550,22 600,12 Q650,2 700,12 Q750,22 800,12 Q850,2 900,12 Q950,22 1000,12 Q1050,2 1100,12 Q1150,22 1200,12" stroke="#b5471b" stroke-width="1" fill="none" opacity="0.4"/>
+      <path d="M0,12 Q60,18 120,12 Q180,6 240,12 Q300,18 360,12 Q420,6 480,12 Q540,18 600,12 Q660,6 720,12 Q780,18 840,12 Q900,6 960,12 Q1020,18 1080,12 Q1140,6 1200,12" stroke="#5c7a5e" stroke-width="0.5" fill="none" opacity="0.4"/>
+      <path d="M0,16 Q80,8 160,16 Q240,24 320,16 Q400,8 480,16 Q560,24 640,16 Q720,8 800,16 Q880,24 960,16 Q1040,8 1120,16 Q1160,22 1200,16" stroke="#4a6b8a" stroke-width="0.5" fill="none" opacity="0.3"/>
+    </svg>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="gallery-section" id="gallery">
+    <div class="section-label">§ 01 — Collection</div>
+    <div class="gallery-intro">
+      <h2 class="reveal">Fifteen<br/><em>data-woven</em><br/>studies</h2>
+      <p class="reveal delay-2">Each piece in this collection treats the loom as a computational instrument — warp threads as variables, weft passages as recorded observations. The resulting textiles are simultaneously functional objects and hand-drawn charts.</p>
+    </div>
+    <div class="gallery-grid" id="gallery-grid">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- THREAD DIVIDER 2 -->
+  <div class="thread-divider">
+    <svg viewBox="0 0 1200 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="24">
+      <path d="M0,8 Q100,16 200,8 Q300,0 400,8 Q500,16 600,8 Q700,0 800,8 Q900,16 1000,8 Q1100,0 1200,8" stroke="#c9922a" stroke-width="1.2" fill="none" opacity="0.5"/>
+      <path d="M0,14 Q80,6 160,14 Q240,22 320,14 Q400,6 480,14 Q560,22 640,14 Q720,6 800,14 Q880,22 960,14 Q1040,6 1120,14 Q1160,20 1200,14" stroke="#8b7ba8" stroke-width="0.7" fill="none" opacity="0.35"/>
+    </svg>
+  </div>
+
+  <!-- DATA STORY -->
+  <section class="data-story" id="story">
+    <div class="section-label">§ 02 — Method</div>
+    <h2>How information becomes material, and material becomes meaning</h2>
+    <div class="story-grid">
+      <div class="story-card reveal">
+        <div class="story-card-num">01 / COLLECT</div>
+        <h3>Gathering the weft</h3>
+        <p>Data is collected from ambient, ecological, and personal sources — sleep rhythms, urban noise levels, microbiome diversity. Each dataset becomes a palette of thread colors and tensions.</p>
+        <svg viewBox="0 0 240 80" id="chart-collect"></svg>
+      </div>
+      <div class="story-card reveal delay-2">
+        <div class="story-card-num">02 / ENCODE</div>
+        <h3>Mapping to material</h3>
+        <p>Variables are assigned to physical properties: color saturation maps to data magnitude, thread weight to frequency, crossing density to correlation strength between two observed phenomena.</p>
+        <svg viewBox="0 0 240 80" id="chart-encode"></svg>
+      </div>
+      <div class="story-card reveal delay-4">
+        <div class="story-card-num">03 / WEAVE</div>
+        <h3>The loom as algorithm</h3>
+        <p>The act of weaving executes the encoding. No two passes of the shuttle are identical — human variation becomes an aesthetic feature, a departure from machine precision that renders data humanistic.</p>
+        <svg viewBox="0 0 240 80" id="chart-weave"></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto" id="about">
+    <div class="manifesto-num">I</div>
+    <div class="manifesto-body">
+      <div class="section-label">§ 03 — Philosophy</div>
+      <h2 class="reveal">Data is not <em>cold</em>. It is gathered by hands, about lives.</h2>
+      <p class="reveal delay-1">In the tradition of Giorgia Lupi's "data humanism," we believe that the visual representation of information should retain the fingerprint of its human origin. Statistics are not abstract — they are counts of people, measurements of growth, recordings of the world as someone experienced it on a specific day.</p>
+      <p class="reveal delay-2">Textile art embodies this philosophy physically. A woven piece remembers every hand that touched the loom, every decision made about color and tension. It is inherently imprecise, contextual, personal — and that is precisely what makes it true.</p>
+      <p class="reveal delay-3">Our work sits at the intersection of these two traditions: rigorous data collection married to tactile, imperfect, beautiful material encoding.</p>
+    </div>
+    <div class="manifesto-aside reveal delay-4">
+      <div class="annotation-block" data-label="Note on method">
+        <p>All datasets are treated as continuous observations rather than discrete values. Interpolation is applied before encoding to produce smooth gradient transitions in the woven surface.</p>
+      </div>
+      <div class="annotation-block" data-label="On imprecision">
+        <p>Human loom operation introduces ±3–7% variation in thread tension. This is considered signal, not noise. It is the mark of authorship.</p>
+      </div>
+      <div class="annotation-block" data-label="Materials used">
+        <p>Merino wool / 120 tex<br/>Raw silk / 40 denier<br/>Linen warp / 16/1 lea<br/>Cotton supplementary weft</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNIQUE -->
+  <section class="technique-section" id="technique">
+    <div class="section-label">§ 04 — Technique</div>
+    <h2 class="reveal" style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:400;max-width:600px;line-height:1.15;margin-bottom:0;">The four languages of data weaving</h2>
+    <div class="technique-grid">
+      <div class="technique-panel reveal">
+        <div>
+          <div class="technique-tag">Technique I</div>
+          <h3>Ikat encoding</h3>
+          <p>Threads are resist-dyed before weaving according to a data distribution. The resulting bleed patterns mirror the natural uncertainty in ecological measurements.</p>
+        </div>
+        <svg viewBox="0 0 300 100" id="viz-ikat"></svg>
+      </div>
+      <div class="technique-panel reveal delay-1">
+        <div>
+          <div class="technique-tag" style="color:rgba(245,240,232,0.4)">Technique II</div>
+          <h3>Supplementary weft</h3>
+          <p>Additional threads float above the base cloth to annotate outliers — the Lupi-esque act of circling and naming the exceptional datum.</p>
+        </div>
+        <svg viewBox="0 0 300 100" id="viz-weft"></svg>
+      </div>
+      <div class="technique-panel reveal delay-2">
+        <div>
+          <div class="technique-tag" style="color:rgba(245,240,232,0.4)">Technique III</div>
+          <h3>Pile and texture</h3>
+          <p>Raised pile encodes intensity — areas of high measurement density emerge physically from the surface, legible by touch as much as by sight.</p>
+        </div>
+        <svg viewBox="0 0 300 100" id="viz-pile"></svg>
+      </div>
+      <div class="technique-panel reveal delay-3">
+        <div>
+          <div class="technique-tag">Technique IV</div>
+          <h3>Color sequence</h3>
+          <p>A handcrafted palette of 47 dye baths, each corresponding to a quantile in the source dataset, applied sequentially to yarn before winding.</p>
+        </div>
+        <svg viewBox="0 0 300 100" id="viz-color"></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="footer-grid">
+      <div>
+        <h4>Data Woven</h4>
+        <p>A project exploring the intersection of textile art and humanistic data visualization.</p>
+      </div>
+      <div>
+        <h4>Index</h4>
+        <a href="#gallery">Collection</a>
+        <a href="#story">Method</a>
+        <a href="#technique">Technique</a>
+        <a href="#about">Philosophy</a>
+      </div>
+      <div>
+        <h4>Influences</h4>
+        <a href="#">Giorgia Lupi — Data Humanism</a>
+        <a href="#">Anni Albers — On Weaving</a>
+        <a href="#">Sheila Hicks — Textiles</a>
+        <a href="#">Dear Data — Posavec & Lupi</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-logo">Data Woven</span>
+      <span class="footer-copy">Textile × Data × Perception</span>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightbox-close">[ close ]</button>
+      <img id="lightbox-img" src="" alt="" />
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+<script src="textile.js"></script>
+
+</body>
+</html>
