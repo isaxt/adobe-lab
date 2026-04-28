@@ -63,20 +63,6 @@ hero.addEventListener("click", () => {
 });
 
 /* ======================
-   TIMELINE INTERACTION
-====================== */
-const timelineItems = document.querySelectorAll(".timeline-item");
-
-window.addEventListener("scroll", () => {
-  timelineItems.forEach(item => {
-    const rect = item.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.6) {
-      item.classList.add("active");
-    }
-  });
-});
-
-/* ======================
    QUESTIONS INTERACTION
 ====================== */
 const questions = document.querySelectorAll(".question");

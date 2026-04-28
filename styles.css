@@ -160,20 +160,6 @@ section {
 }
 
 /* ======================
-   TIMELINE
-====================== */
-.timeline-item {
-  opacity: 0.3;
-  transition: all 0.4s ease;
-  margin-bottom: 40px;
-}
-
-.timeline-item.active {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* ======================
    QUESTIONS
 ====================== */
 .question {
