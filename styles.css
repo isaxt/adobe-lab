@@ -216,22 +216,27 @@ section {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 20px;
 }
 
+/* Remove blue border on gallery links */
 .gallery-item {
   position: relative;
   display: block;
   overflow: hidden;
-  border: 1px solid currentColor;
+  border: none;        /* ← remove the border */
+  outline: none;
+  color: inherit;
+  text-decoration: none;
   cursor: pointer;
 }
 
+/* Show full image without cropping */
 .gallery-item img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: auto;        /* ← change from fixed 250px to auto */
+  object-fit: unset;   /* ← remove the crop behavior */
   display: block;
   transition: transform 0.4s ease;
 }
