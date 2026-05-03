@@ -1,4 +1,4 @@
-const BASE_PATH = '/website_experiments/hologram_digital_shrine/digital_shrine_assets/';
+const BASE_PATH = './digital_shrine_assets/';
 
 const RELICS = [
   { file: BASE_PATH + 'sparkle_church.png',     label:'SPARKLE_SANCTUARY',    tags:['church'],            id:'RLC-001' },
