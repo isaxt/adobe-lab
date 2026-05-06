@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIMINAL — A Contemporary Exhibition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+
+<!-- External CSS -->
+  <link rel="stylesheet" href="indie.css">
+
+</head>
+<body>
+
+<!-- OVERLAYS -->
+<div id="noise"></div>
+<div id="vignette"></div>
+<div id="scanlines"></div>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<div id="glitch-overlay"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-title">Liminal — Exhibition Space</div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+  <div class="loader-text" id="loader-text">Initializing spaces...</div>
+</div>
+
+<!-- MINI MAP -->
+<nav id="minimap">
+  <div class="map-room active interactive" data-target="entrance">00 — Entrance</div>
+  <div class="map-room interactive" data-target="room-gallery">01 — Gallery A</div>
+  <div class="map-room interactive" data-target="room-sculpture">02 — Sculpture Hall</div>
+  <div class="map-room interactive" data-target="room-poetry">03 — The Archive</div>
+  <div class="map-room interactive" data-target="room-halls">04 — The Rooms</div>
+  <div class="map-room interactive" data-target="exit-room">05 — Exit</div>
+</nav>
+
+<!-- HUD -->
+<div id="coords">
+  <div id="coord-x">X: 0.000</div>
+  <div id="coord-y">Y: 0.000</div>
+  <div id="coord-room">ROOM: ENTRANCE</div>
+</div>
+
+<!-- ARTIFACT MODAL -->
+<div id="artifact-modal">
+  <div class="modal-backdrop" id="modal-backdrop"></div>
+  <div class="modal-content">
+    <img src="" alt="" class="modal-img" id="modal-img">
+    <div class="modal-text">
+      <div>
+        <div class="modal-tag" id="modal-tag">Artifact</div>
+        <div class="modal-title" id="modal-title">Untitled</div>
+        <div class="modal-body" id="modal-body"></div>
+      </div>
+    </div>
+    <button class="modal-close" id="modal-close">[ CLOSE ]</button>
+  </div>
+</div>
+
+<!-- WORLD -->
+<div id="world">
+
+  <!-- ═══ 00: ENTRANCE ═══ -->
+  <section id="entrance">
+    <div class="entrance-bg"></div>
+    <div class="entrance-grid"></div>
+    <div class="floating-particles" id="particles"></div>
+
+    <div class="entrance-content">
+      <div class="exhibition-tag">Contemporary Exhibition — 2026</div>
+      <h1 class="main-title" data-text="LIMINAL">
+        LIMINAL
+        <span>— between spaces —</span>
+      </h1>
+      <button class="enter-btn interactive" onclick="enterExhibition()">
+        Enter the Exhibition
+      </button>
+    </div>
+
+    <div class="amb-glow" style="width:600px;height:600px;background:rgba(74,244,232,0.04);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse-glow 6s infinite;"></div>
+    <div class="amb-glow" style="width:300px;height:300px;background:rgba(164,74,244,0.06);top:30%;left:20%;animation:drift 12s infinite;"></div>
+  </section>
+
+  <div class="section-transition"></div>
+
+  <!-- ═══ 01: GALLERY A ═══ -->
+  <section id="room-gallery" class="room-section">
+    <div class="room-number">Room 01</div>
+    <div class="room-label">Gallery A — Environmental Spaces</div>
+
+    <div class="amb-glow reveal" style="width:400px;height:200px;background:rgba(74,244,232,0.04);top:20%;right:10%;animation:drift 15s infinite 2s;"></div>
+
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Environmental Spaces</span>
+      <h2 class="section-title">Rooms <em>Without Walls</em></h2>
+    </div>
+
+    <div class="gallery-grid reveal">
+      <div class="gallery-cell wide interactive" data-title="Room 01 — Digital Threshold" data-img="indie_sculpture_assets/room1.png" data-modal-title="Digital Threshold" data-modal-body="Where the screen ends and the dream begins. Objects arrange themselves according to logic you cannot yet understand." onclick="openModal(this)">
+        <img src="indie_sculpture_assets/room1.png" alt="Room 1" loading="lazy">
+      </div>
+      <div class="gallery-cell interactive" data-title="Room 02 — Spectral Arcade" data-img="indie_sculpture_assets/room2.png" data-modal-title="Spectral Arcade" data-modal-body="Neon remembers what daylight forgets. The machines still run. Nobody wins. Nobody leaves." onclick="openModal(this)">
+        <img src="indie_sculpture_assets/room2.png" alt="Room 2" loading="lazy">
+      </div>
+      <div class="gallery-cell interactive" data-title="Room 03 — Chromatic Noise" data-img="indie_sculpture_assets/room3.png" data-modal-title="Chromatic Noise" data-modal-body="Signal and interference are indistinguishable at sufficient distance. Every color contains its opposite." onclick="openModal(this)">
+        <img src="indie_sculpture_assets/room3.png" alt="Room 3" loading="lazy">
+      </div>
+      <div class="gallery-cell interactive" data-title="Room 04 — Subaquatic Archive" data-img="indie_sculpture_assets/room4.png" data-modal-title="Subaquatic Archive" data-modal-body="Depth is not measured in meters but in the weight of unspoken things. The archive holds what the surface denies." onclick="openModal(this)">
+        <img src="indie_sculpture_assets/room4.png" alt="Room 4" loading="lazy">
+      </div>
+      <div class="gallery-cell interactive" data-title="Room 05 — Grey Interval" data-img="indie_sculpture_assets/room5.png" data-modal-title="Grey Interval" data-modal-body="Between the frequency of knowing and the static of forgetting. You have been here before. You will not remember." onclick="openModal(this)">
+        <img src="indie_sculpture_assets/room5.png" alt="Room 5" loading="lazy">
+      </div>
+      <div class="gallery-cell interactive" data-title="Room 06 — Entanglement" data-img="indie_sculpture_assets/room6.png" data-modal-title="Entanglement" data-modal-body="Two observers alter the same particle. The measurement is the event. Watching changes what is watched." onclick="openModal(this)">
+        <img src="indie_sculpture_assets/room6.png" alt="Room 6" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <div class="section-transition" style="background:linear-gradient(var(--ash),var(--void));"></div>
+
+  <!-- ═══ 02: SCULPTURE HALL ═══ -->
+  <section id="room-sculpture" class="room-section" style="padding: 100px 40px 160px;">
+    <div class="room-number">Room 02</div>
+    <div class="room-label">Sculpture Hall — Material Language</div>
+
+    <div class="amb-glow" style="width:500px;height:500px;background:rgba(244,74,138,0.03);bottom:10%;left:5%;animation:pulse-glow 8s infinite 1s;"></div>
+
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Material Language</span>
+      <h2 class="section-title"><em>Objects</em> in Uncertain Space</h2>
+    </div>
+
+    <div class="sculpture-stage reveal">
+      <div class="sculpture-item interactive" onclick="openModal(this)" data-img="indie_sculpture_assets/panel_1.png" data-modal-title="Vertical Witness" data-modal-body="The figure does not move. It has never moved. Your approach is what creates the motion — a collaborative hallucination between matter and the one who perceives it.">
+        <div class="sculpture-light"></div>
+        <div class="sculpture-frame">
+          <img src="indie_sculpture_assets/panel_1.png" alt="Panel 1" loading="lazy">
+        </div>
+        <div class="sculpture-shadow"></div>
+        <div class="sculpture-placard">
+          I — Vertical Witness<br>
+          Mixed media, variable dimensions<br>
+          Collection of the Artist
+        </div>
+      </div>
+
+      <div class="sculpture-item interactive" onclick="openModal(this)" data-img="indie_sculpture_assets/panel_2.png" data-modal-title="Accumulated Evidence" data-modal-body="Evidence of what? The question is the answer. Everything assembled here was found. Nothing was lost. The distinction dissolves on examination.">
+        <div class="sculpture-light"></div>
+        <div class="sculpture-frame">
+          <img src="indie_sculpture_assets/panel_2.png" alt="Panel 2" loading="lazy">
+        </div>
+        <div class="sculpture-shadow"></div>
+        <div class="sculpture-placard">
+          II — Accumulated Evidence<br>
+          Found objects, resin, light<br>
+          Private Collection
+        </div>
+      </div>
+
+      <div class="sculpture-item interactive" onclick="openModal(this)" data-img="indie_sculpture_assets/panel_3.png" data-modal-title="Chromatic Automaton" data-modal-body="It was built to feel. Whether it succeeds is a question about the nature of success, not about the machine. You are also a machine. You are also asking.">
+        <div class="sculpture-light"></div>
+        <div class="sculpture-frame">
+          <img src="indie_sculpture_assets/panel_3.png" alt="Panel 3" loading="lazy">
+        </div>
+        <div class="sculpture-shadow"></div>
+        <div class="sculpture-placard">
+          III — Chromatic Automaton<br>
+          Polymer, steel, UV pigment<br>
+          Artist Bequest
+        </div>
+      </div>
+
+      <div class="sculpture-item interactive" onclick="openModal(this)" data-img="indie_sculpture_assets/panel_4.png" data-modal-title="Soft Systems" data-modal-body="Fragility is structural. Every delicate thing has survived longer than the things that destroyed it. Hold this thought loosely.">
+        <div class="sculpture-light"></div>
+        <div class="sculpture-frame">
+          <img src="indie_sculpture_assets/panel_4.png" alt="Panel 4" loading="lazy">
+        </div>
+        <div class="sculpture-shadow"></div>
+        <div class="sculpture-placard">
+          IV — Soft Systems<br>
+          Wire, ceramic, botanical matter<br>
+          Permanent Collection
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-transition" style="background:linear-gradient(var(--void),var(--fog));"></div>
+
+  <!-- ═══ 03: POETRY / ARCHIVE ═══ -->
+  <section id="room-poetry" class="room-section">
+    <div class="room-number">Room 03</div>
+    <div class="room-label">The Archive — Recorded Transmissions</div>
+
+    <div class="poetry-chamber reveal">
+      <span class="section-eyebrow" style="margin-bottom:60px;display:block;">— Fragment VII —</span>
+
+      <div class="poetry-lines">
+        <span class="poetry-line" id="pl1">You entered through a door that did not exist.</span>
+        <span class="poetry-line" id="pl2">The room was already <em>waiting</em>.</span>
+        <span class="poetry-line" id="pl3">Objects carry the residue of being observed.</span>
+        <span class="poetry-line" id="pl4">Look longer. Something shifts.</span>
+        <span class="poetry-line" id="pl5" style="font-size:0.7em;color:var(--ghost);margin-top:40px;">
+          — from an untitled manuscript, found at the perimeter
+        </span>
+      </div>
+    </div>
+
+    <!-- More rooms grid -->
+    <div class="gallery-grid reveal" style="max-width:900px;margin-top:120px;grid-template-columns:repeat(3,1fr);">
+      <div class="gallery-cell interactive" data-title="Room 07 — Dark Matter" data-img="indie_sculpture_assets/room7.png" onclick="openModal(this)" data-modal-title="Dark Matter" data-modal-body="The text on the wall has been here longer than the wall. Longer than the building. Longer than the idea of buildings.">
+        <img src="indie_sculpture_assets/room7.png" alt="Room 7" loading="lazy">
+      </div>
+      <div class="gallery-cell interactive" data-title="Room 08 — Fossil Network" data-img="indie_sculpture_assets/room8.png" onclick="openModal(this)" data-modal-title="Fossil Network" data-modal-body="The root and the circuit are the same structure in different time. Intelligence has always been distributed. Always been rhizomatic.">
+        <img src="indie_sculpture_assets/room8.png" alt="Room 8" loading="lazy">
+      </div>
+      <div class="gallery-cell interactive" data-title="Room 09 — No Exit" data-img="indie_sculpture_assets/room9.png" onclick="openModal(this)" data-modal-title="No Exit" data-modal-body="The sign says no exit. There is no sign. You are reading something that does not exist. This is the exit.">
+        <img src="indie_sculpture_assets/room9.png" alt="Room 9" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <div class="section-transition" style="background:linear-gradient(var(--fog),var(--ash));"></div>
+
+  <!-- ═══ 04: HALLS — HORIZONTAL SCROLL ═══ -->
+  <section id="room-halls" style="height:100vh;overflow:hidden;position:relative;">
+    <div class="room-number" style="position:absolute;top:40px;left:40px;z-index:10;">Room 04</div>
+    <div class="room-label" style="position:absolute;top:40px;right:40px;z-index:10;">The Rooms — Navigate with Arrows</div>
+
+    <div style="position:absolute;bottom:80px;left:50%;transform:translateX(-50%);z-index:10;font-family:var(--mono);font-size:9px;letter-spacing:0.3em;color:var(--ghost);display:flex;gap:30px;">
+      <span id="hall-prev" class="interactive" style="cursor:pointer;" onclick="shiftHall(-1)">← PREV</span>
+      <span id="hall-next" class="interactive" style="cursor:pointer;" onclick="shiftHall(1)">NEXT →</span>
+    </div>
+
+    <div class="halls-nav">
+      <div class="halls-dot active" onclick="goHall(0)"></div>
+      <div class="halls-dot" onclick="goHall(1)"></div>
+      <div class="halls-dot" onclick="goHall(2)"></div>
+      <div class="halls-dot" onclick="goHall(3)"></div>
+    </div>
+
+    <div class="halls-track" id="halls-track">
+      <div class="hall interactive" onclick="openModal(this)" data-img="indie_sculpture_assets/room10.png" data-modal-title="Televised Memory" data-modal-body="Every broadcast contains its own archaeology. The static between channels is where the real signal hides. Tune accordingly.">
+        <div class="hall-img"><img src="indie_sculpture_assets/room10.png" alt="Room 10" loading="lazy"></div>
+        <div class="hall-overlay"></div>
+        <div class="hall-info">
+          <div class="hall-num">Hall 10</div>
+          <div class="hall-name">Televised<br>Memory</div>
+        </div>
+        <div class="hall-arrow">→ ENTER</div>
+      </div>
+      <div class="hall interactive" onclick="openModal(this)" data-img="indie_sculpture_assets/room11.png" data-modal-title="Botanical Override" data-modal-body="The plants have learned the geometry of interference. They grow toward the broken frequencies. Life, as it turns out, prefers the edges.">
+        <div class="hall-img"><img src="indie_sculpture_assets/room11.png" alt="Room 11" loading="lazy"></div>
+        <div class="hall-overlay"></div>
+        <div class="hall-info">
+          <div class="hall-num">Hall 11</div>
+          <div class="hall-name">Botanical<br>Override</div>
+        </div>
+        <div class="hall-arrow">→ ENTER</div>
+      </div>
+      <div class="hall interactive" onclick="openModal(this)" data-img="indie_sculpture_assets/room12.png" data-modal-title="Chromatic Assembly" data-modal-body="Color has memory. This particular combination of hues has appeared in 47 unrelated sites across 3 continents. The researchers have no explanation. The flowers do.">
+        <div class="hall-img"><img src="indie_sculpture_assets/room12.png" alt="Room 12" loading="lazy"></div>
+        <div class="hall-overlay"></div>
+        <div class="hall-info">
+          <div class="hall-num">Hall 12</div>
+          <div class="hall-name">Chromatic<br>Assembly</div>
+        </div>
+        <div class="hall-arrow">→ ENTER</div>
+      </div>
+      <div class="hall interactive" onclick="openModal(this)" data-img="indie_sculpture_assets/room4.png" data-modal-title="Deep Resonance" data-modal-body="At certain depths, sound behaves like light. Meaning behaves like water. Everything you believe is mostly atmosphere.">
+        <div class="hall-img"><img src="indie_sculpture_assets/room4.png" alt="Deep" loading="lazy"></div>
+        <div class="hall-overlay"></div>
+        <div class="hall-info">
+          <div class="hall-num">Hall 13</div>
+          <div class="hall-name">Deep<br>Resonance</div>
+        </div>
+        <div class="hall-arrow">→ ENTER</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-transition" style="background:linear-gradient(var(--ash),var(--void));"></div>
+
+  <!-- ═══ EXIT ═══ -->
+  <section id="exit-room">
+    <div class="amb-glow" style="width:400px;height:400px;background:rgba(74,244,232,0.03);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse-glow 10s infinite;"></div>
+    <div class="exit-title reveal">You have reached the perimeter.</div>
+    <div class="exit-meta reveal">
+      LIMINAL — A Contemporary Exhibition<br>
+      Curated 2026<br><br>
+      <a href="#entrance" class="interactive">← Return to Entrance</a>
+    </div>
+  </section>
+
+</div><!-- /world -->
+
+<script src="indie.js"></script> 
+</body>
+</html>
