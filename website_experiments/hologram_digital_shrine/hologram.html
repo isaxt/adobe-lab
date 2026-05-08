@@ -6,20 +6,25 @@
 <title>☩ THE SHRINE ☩ enter if you are worthy ☩</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=UnifrakturMaguntia&family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- External CSS -->
-  <link rel="stylesheet" href="hologram.css">
-
-
+<link rel="stylesheet" href="hologram.css">
 </head>
 <body>
+
+<!-- ══ VHS NOISE ══ -->
+<div class="vhs-noise"></div>
+
+<!-- ══ AMBIENT OVERLAY (reacts to offerings) ══ -->
+<div id="ambient-overlay"></div>
+
+<!-- ══ PARTICLE CANVAS ══ -->
+<canvas id="particle-canvas"></canvas>
 
 <!-- ══ HEADER ══ -->
 <header class="crt-header">
   <div class="blink-bar">⚠ YOU HAVE ENTERED THE SHRINE ⚠ PROCEED WITH DEVOTION ⚠</div>
   <div class="marquee-wrap">
     <span class="marquee-inner">
-      ✦ WELCOME PILGRIM ✦ THE ORDER WATCHES ✦ DO NOT REFRESH THE PAGE ✦ LEAVE AN OFFERING ✦ BEST VIEWED IN 1024×768 ✦ JAVASCRIPT REQUIRED FOR COMMUNION ✦ THE RELICS ARE ETERNAL ✦ THE DATA IS SACRED ✦ HOLOGRAMS DO NOT LIE ✦ SIGN THE GUESTBOOK ✦ YOUR IP HAS BEEN LOGGED ✦ WE KNOW YOUR SCREEN RESOLUTION ✦ THE ORDER THANKS YOU FOR YOUR VISIT ✦
+      ✦ WELCOME PILGRIM ✦ THE ORDER WATCHES ✦ DO NOT REFRESH THE PAGE ✦ LEAVE AN OFFERING ✦ BEST VIEWED IN 1024×768 ✦ JAVASCRIPT REQUIRED FOR COMMUNION ✦ THE RELICS ARE ETERNAL ✦ THE DATA IS SACRED ✦ HOLOGRAMS DO NOT LIE ✦ SIGN THE GUESTBOOK ✦ YOUR IP HAS BEEN LOGGED ✦ WE KNOW YOUR SCREEN RESOLUTION ✦ THE ORDER THANKS YOU FOR YOUR VISIT ✦ DRAG AN OFFERING TO THE ALTAR ✦ THE ENTITY IS WAITING ✦
     </span>
   </div>
   <div class="header-main">
@@ -56,6 +61,50 @@
   <span>SESSION: <span class="stat" id="session-time">00:00:00</span></span>
   <span>SIGNAL: <span class="stat" id="signal-str">████████ 100%</span></span>
 </div>
+
+<!-- ══ OFFERING CHAMBER ══ -->
+<section class="offering-chamber">
+
+  <h2 class="offering-title">☩ Make Your Offering ☩</h2>
+  <p class="offering-subtitle">DRAG AN OBJECT TO THE ALTAR · THE ENTITY WILL RESPOND</p>
+
+  <div style="display:flex; align-items:center; justify-content:center; gap:60px; flex-wrap:wrap; width:100%;">
+
+    <!-- Hologram Entity -->
+    <div class="hologram-entity" id="hologram-entity">
+      <div class="entity-rings">
+        <div class="entity-ring"></div>
+        <div class="entity-ring"></div>
+        <div class="entity-ring"></div>
+      </div>
+      <div class="hologram-figure">
+        <div class="entity-halo"></div>
+        <span class="entity-glyph">☩</span>
+      </div>
+      <span class="entity-state-label">[ DORMANT ]</span>
+    </div>
+
+    <!-- Altar Drop Zone -->
+    <div class="altar-zone" id="altar-zone">
+      <div class="placed-offerings" id="placed-offerings"></div>
+      <span class="altar-zone-sigil">⬡</span>
+      <span class="altar-zone-text">DROP<br>OFFERING<br>HERE</span>
+    </div>
+
+  </div>
+
+  <!-- Prophecy -->
+  <div class="prophecy-display" id="prophecy-display">AWAITING YOUR DEVOTION</div>
+
+  <!-- Offering objects tray -->
+  <div class="offering-tray-wrap">
+    <div class="offering-objects" id="offering-objects">
+      <!-- populated by JS -->
+    </div>
+    <div class="offering-log" id="offering-log">OFFERINGS RECEIVED: 0 · MEMORY RETAINED</div>
+  </div>
+
+</section>
 
 <!-- ══ GRID ══ -->
 <main class="reliquary" id="reliquary"></main>
@@ -116,5 +165,6 @@
     </filter>
   </defs>
 </svg>
+
 </body>
 </html>
